@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>NavBar.qml</file>
+        <file>image/carotte.png</file>
+        <file>image/heart.png</file>
+        <file>image/unicorn.png</file>
+        <file>Game.qml</file>
+        <file>image/dragon.png</file>
+        <file>image/chemin.jpg</file>
+        <file>image/haie.jpg</file>
+    </qresource>
+</RCC>
