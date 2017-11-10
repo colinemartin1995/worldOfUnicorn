@@ -25,10 +25,10 @@ Rectangle {
         rows:15
         Repeater{
             model: [-1,0,2,1,1,0,1,0,1,0,1,0,1,0,1,0,0,2,0,1,0,1,0,0,0,0,0,0,0,1,0,1,2,1,1,0,1,1,1,0,1,0,1,0,1,0,1,2,1,0,0,1,0,1,0,1,1,1,1,1,0,0,2,1,1,1,1,1,1,1,1,0,0,0,1,1,1,2,1,0,0,0,0,1,0,1,1,1,0,0,1,0,2,0,0,1,0,1,1,0,0,0,1,1,0,0,2,2,2,1,1,1,1,0,0,1,1,1,0,0,1,2,1,2,2,2,2,2,0,1,1,0,1,1,1,1,0,1,0,1,0,1,2,2,1,0,0,0,0,1,0,0,1,1,1,1,1,0,2,1,1,2,1,0,0,1,1,1,0,1,0,0,0,2,2,2,2,1,0,1,1,0,1,0,0,0,1,0,1,1,0,2,0,0,0,1,0,1,0,1,0,0,0,1,0,0,2,2,0,0,0,0,1,0,1,1,0,1,1,1,1,0,1,0,3]
-            delegate: Rectangle{
+            delegate: Image{
                 width: lab.width/15
                 height: width
-                color: modelData === 1 ? "grey" : "green"
+                source: modelData === 1 ?  "qrc:/image/haie.jpg" : "qrc:/image/chemin.jpg"
             }
         }
     }
@@ -74,8 +74,8 @@ Rectangle {
         property real centerX: game.width / 2
         property real centerY: game.height / 2
         property real bubbleCenter: bubble.width / 2
-        x: 200
-        y: 150
+        x: 0
+        y: 0
         onXChanged:{
             ennemy1.x=bubble.x;
         }
@@ -100,6 +100,8 @@ Rectangle {
         source: "qrc:/image/carotte.png"
         width:lab.width/15.5
         height: width
+        anchors.bottom: parent.bottom
+        anchors.right: parent.right
         property bool superposition:myCalcul.intersects( Qt.rect(x,y,width,height),Qt.rect(bubble.x,bubble.y,bubble.width, bubble.height))
         onSuperpositionChanged:{
             if(superposition==true){
@@ -113,8 +115,8 @@ Rectangle {
         source: "qrc:/image/dragon.png"
         width:lab.width/15.5
         height: width
-        x:0
-        y:0
+        x:-50
+        y:-50
         property bool superposition:myCalcul.intersects( Qt.rect(x,y,width,height),Qt.rect(bubble.x,bubble.y,bubble.width, bubble.height))
         onSuperpositionChanged:{
             if(superposition==true){
